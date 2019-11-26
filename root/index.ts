@@ -89,9 +89,24 @@ function createAandB() :Result {
     return answer;
 }
 
+function deviation(X :Array<number>) :number{
+    let answer :number = Math.abs(f_x[0] - calcApp(X, x[0]));
+    for (let i = 1; i < n; i++) {
+        let current :number = Math.abs(f_x[i] - calcApp(X, x[i]));
+        if (current > answer) answer = current;
+    }
+    return answer;
+}
+
+function calcApp(x :Array<number>, point: number) :number{
+    return x.reduce((acc, el, index) => acc += el*phi(index)(point));
+}
+
 const matrix_A_B = createAandB();
 
 const result :Array<number> = squareRootMethod(matrix_A_B.A, matrix_A_B.B);
+const dev = deviation(result);
 
 console.log('hi');
 console.log(JSON.stringify(result));
+console.log('deviaton: ' + dev);

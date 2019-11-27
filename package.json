@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc",
-    "start": "tsc && node build/index"
+    "start": "tsc && node build/index",
+    "laba3": "tsc && node build/laba3"
   },
   "author": "",
   "license": "ISC",

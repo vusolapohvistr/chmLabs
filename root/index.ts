@@ -99,10 +99,12 @@ function deviation(X :Array<number>) :number{
 }
 
 function calcApp(x :Array<number>, point: number) :number{
-    return x.reduce((acc, el, index) => acc += el*phi(index)(point));
+    return x.reduce((acc, el, index) => acc + el * phi(index)(point));
 }
 
 const matrix_A_B = createAandB();
+console.log('matrix_a_b:');
+console.log(matrix_A_B);
 
 const result :Array<number> = squareRootMethod(matrix_A_B.A, matrix_A_B.B);
 const dev = deviation(result);
